@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CPU Scheduling Simulator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="glass">
+    <a href="#home">Home</a><a href="#algorithms">Algorithms</a><a href="#input">Input</a>
+    <a href="#analysis">Analysis</a><a href="#results">Results</a>
+  </nav>
+
+  <!-- Page 1 -->
+  <section id="home" class="hero">
+    <div class="gem g1"></div><div class="gem g2"></div><div class="gem g3"></div>
+    <h1>CPU SCHEDULING SIMULATOR</h1>
+    <p>Pick an algorithm, enter your processes and see how the CPU runs them.</p>
+    <a class="btn" href="#algorithms">Start</a>
+  </section>
+
+  <!-- Page 2 -->
+  <section id="algorithms">
+    <h2>Choose an algorithm</h2>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <!-- Page 3 -->
+  <section id="input">
+    <h2>Enter process details</h2>
+    <div class="glass panel">
+      <p id="chosen">No algorithm selected yet. Go back and pick one.</p>
+      <div class="row">
+        <label>Number of processes
+          <input id="count" type="number" min="1" max="10" value="4"></label>
+        <label id="qbox" hidden>Time quantum
+          <input id="quantum" type="number" min="1" value="2"></label>
+        <button class="btn small" id="gen">Create table</button>
+      </div>
+      <div class="scroll-x"><table id="ptable" class="nopri"></table></div>
+      <p id="msg" role="alert"></p>
+      <button class="btn" id="run">Run simulation</button>
+    </div>
+  </section>
+
+  <!-- Page 4 -->
+  <section id="analysis">
+    <h2>Gantt chart and analysis</h2>
+    <div class="glass panel"><h3>Gantt chart</h3>
+      <div id="gantt" class="scroll-x empty">Run a simulation to see the Gantt chart.</div></div>
+    <div class="glass panel"><h3>Waiting time and turnaround time</h3>
+      <div id="chart" class="empty">Run a simulation to see the graph.</div></div>
+  </section>
+
+  <!-- Page 5 -->
+  <section id="results">
+    <h2>Process results</h2>
+    <div id="stats" class="stats"></div>
+    <div class="glass panel scroll-x"><table id="rtable"><tbody><tr><td class="empty">Run a simulation to see the results.</td></tr></tbody></table></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
